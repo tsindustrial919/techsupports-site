@@ -12,7 +12,10 @@ const ADDRESS_LINES = [
   "Mansarovar, Jaipur - 302020,",
   "Rajasthan, India",
 ];
-const MAP_QUERY = ADDRESS_LINES.join(" ").replace(/,/g, "");
+// Direct Google Maps link (opens the exact business pin)
+const MAPS_LINK = "https://maps.app.goo.gl/4CRkxhA5rUfwYbqK9";
+// Embedded map pinned to the same spot (short links can't be embedded, so we use its coordinates)
+const MAP_EMBED = "https://www.google.com/maps?q=26.825083,75.7624051&z=17&output=embed";
 
 const NAV = [
   { label: "Gallery", href: "#gallery" },
@@ -316,13 +319,21 @@ export default function App() {
           <div className="rounded-3xl overflow-hidden shadow-2xl">
             <iframe
               title="Tech Supports location map"
-              src={`https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&output=embed`}
+              src={MAP_EMBED}
               width="100%"
               height="450"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
+          <a
+            href={MAPS_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-8 bg-blue-900 text-white px-8 py-3 rounded-2xl font-bold shadow-xl hover:scale-105 transition"
+          >
+            Open in Google Maps
+          </a>
         </div>
       </section>
 
