@@ -317,17 +317,21 @@ export default function App() {
                   type="button"
                   onClick={() => scrollGallery(-1)}
                   aria-label="Scroll left"
-                  className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-blue-900 text-white items-center justify-center shadow-xl hover:bg-blue-800"
+                  className="hidden md:flex absolute left-3 top-[36%] -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white text-blue-900 border border-gray-200 shadow-lg items-center justify-center hover:bg-blue-900 hover:text-white hover:border-blue-900 active:scale-95 transition"
                 >
-                  ←
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg>
                 </button>
                 <button
                   type="button"
                   onClick={() => scrollGallery(1)}
                   aria-label="Scroll right"
-                  className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-blue-900 text-white items-center justify-center shadow-xl hover:bg-blue-800"
+                  className="hidden md:flex absolute right-3 top-[36%] -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white text-blue-900 border border-gray-200 shadow-lg items-center justify-center hover:bg-blue-900 hover:text-white hover:border-blue-900 active:scale-95 transition"
                 >
-                  →
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
                 </button>
 
                 <div
@@ -434,14 +438,36 @@ export default function App() {
             </div>
           </section>
 
+          {/* Contact & Enquiry */}
+          <section id="contact" className="py-20 px-4 bg-white scroll-mt-24">
+            <div className="max-w-2xl mx-auto">
+              <h3 className="text-4xl font-bold text-center mb-12">Contact & Enquiry</h3>
+              <form
+                className="grid gap-4 bg-gray-50 p-6 md:p-10 rounded-3xl shadow-2xl"
+                onSubmit={handleEnquiry}
+              >
+                <input name="name" type="text" required placeholder="Your Name" className="border p-3 rounded-xl" />
+                <input name="email" type="email" placeholder="Your Email" className="border p-3 rounded-xl" />
+                <input name="phone" type="tel" required placeholder="Your Mobile Number" className="border p-3 rounded-xl" />
+                <textarea name="message" required placeholder="Your Enquiry" rows="4" className="border p-3 rounded-xl"></textarea>
+                <button
+                  type="submit"
+                  className="bg-green-600 text-white py-3 rounded-2xl font-bold hover:scale-105 transition"
+                >
+                  Send Enquiry on WhatsApp
+                </button>
+              </form>
+            </div>
+          </section>
+
           {/* About + Contact Information */}
-          <section id="about" className="py-20 px-4 bg-white scroll-mt-24">
+          <section id="about" className="py-20 px-4 bg-gray-100 scroll-mt-24">
             <div className="max-w-5xl mx-auto">
               <h3 className="text-4xl font-bold text-center mb-6">About Us & Contact Information</h3>
               <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
                 Tech Supports is a supplier of premium industrial machines, tools and spares, and a plant technical consultancy and service provider based in Jaipur, Rajasthan.
               </p>
-              <div className="bg-gray-50 p-6 md:p-10 rounded-3xl shadow-2xl grid md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 md:p-10 rounded-3xl shadow-2xl grid md:grid-cols-2 gap-6">
                 <p className="text-lg">
                   <strong>Phone / WhatsApp:</strong>
                   <br />
@@ -472,28 +498,6 @@ export default function App() {
                   ))}
                 </p>
               </div>
-            </div>
-          </section>
-
-          {/* Contact & Enquiry */}
-          <section id="contact" className="py-20 px-4 bg-gray-100 scroll-mt-24">
-            <div className="max-w-2xl mx-auto">
-              <h3 className="text-4xl font-bold text-center mb-12">Contact & Enquiry</h3>
-              <form
-                className="grid gap-4 bg-white p-6 md:p-10 rounded-3xl shadow-2xl"
-                onSubmit={handleEnquiry}
-              >
-                <input name="name" type="text" required placeholder="Your Name" className="border p-3 rounded-xl" />
-                <input name="email" type="email" placeholder="Your Email" className="border p-3 rounded-xl" />
-                <input name="phone" type="tel" required placeholder="Your Mobile Number" className="border p-3 rounded-xl" />
-                <textarea name="message" required placeholder="Your Enquiry" rows="4" className="border p-3 rounded-xl"></textarea>
-                <button
-                  type="submit"
-                  className="bg-green-600 text-white py-3 rounded-2xl font-bold hover:scale-105 transition"
-                >
-                  Send Enquiry on WhatsApp
-                </button>
-              </form>
             </div>
           </section>
 
